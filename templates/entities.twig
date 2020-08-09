@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<table class="table table-hover">
+	<thead>
+		<tr>
+			{% set i = true %}
+			
+
+			{% for entity in entities %}
+				{% if i %}
+					{% set i = false %}
+					{% for key,value in entity %}
+						{% if key != 'id' %}
+							<th scope="row">{{ key }}</th>
+						{% endif %}
+					{% endfor %}
+					{%endif%}
+				{% endfor %}
+				
+<th scope="row"><a href="/{{ table }}/insert" class="btn btn-outline-warning">Ajouter</a></th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		{% for entity in entities %}
+			<tr class="table-active">
+				{% for key,value in entity %}
+					{% if key != 'id' %}
+						<th scope="row">{{ value }}</th>
+					{% endif %}
+				{% endfor %}
+
+				<td scope="row">
+					
+						<a href="/{{ table }}/{{ entity['id'] }}" class="btn btn-outline-success">Details</a>
+						<a href="/{{ table }}/update/{{ entity['id'] }}" class="btn btn-outline-info">Modifier</a>
+
+						<a href="/{{ table }}/delete/{{ entity['id'] }}" class="btn btn-outline-danger">Supprimer</a>
+					</td>
+				
+			</tr>
+		</span>
+	</tbody>
+</th></tr>{% endfor %}</tbody></table>{% endblock %}

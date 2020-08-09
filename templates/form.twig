@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+ {{ form_start(form) }}
+ {{ form_widget(form) }}
+<button type="submit" class ="btn btn-success">
+{% if editMode %}Modifier
+
+{% else%}
+Ajouter
+</button>
+
+{% endif%}
+ {{ form_end(form) }}
+
+
+{% endblock %}

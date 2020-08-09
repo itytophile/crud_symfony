@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Prix littéraire{% endblock %}</title>
+  <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <h1 class="title is-1 is-spaced">
+         Prix littéraire
+      </h1>
+      <p class="subtitle">
+        Projet d'un site CRUD avec Symfony et bootstrap!!!
+      </p>
+    </div>
+  </section>
+  <section class="section">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/auteur">Auteurs</a>
+
+    <a class="navbar-brand" href="/oeuvre">Oeuvres</a>
+
+    <a class="navbar-brand" href="/prixauteur">Prix Auteur</a>
+
+     <a class="navbar-brand" href="/prixoeuvre">Prix Oeuvre</a>
+
+</nav>
+
+  {% block body %}{% endblock %}
+</section>
+</body>
+</html>

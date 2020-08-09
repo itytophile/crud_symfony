@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="jumbotron">
+		<h1 class="display-3">
+			{{ nom }}
+			<a href="/oeuvre/update/{{ id }}" class="btn btn-outline-info">Modifier</a>
+		</h1>
+		<p class="lead">Les details sur cet enregistrement.
+		</p>
+		<hr class="my-4">
+		<p class="lead">
+			<ul class="list-group">
+				<li class="list-group-item d-flex justify-content-between align-items-center">
+					PRIX
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center">
+					{% for value in prix %}
+						<p>{{ value }}</p>
+					{% endfor %}
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center">
+					AUTEUR
+					<span class="badge "></span>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center">
+					{% for value in auteurs %}
+						<p>{{ value }}</p>
+					{% endfor %}
+				</li>
+			</ul>
+
+		</p>
+	</div>
+{% endblock %}

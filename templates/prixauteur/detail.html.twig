@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="jumbotron">
+		<h1 class="display-3">
+			{{ nom }}
+			<a href="/prixauteur/update/{{ id }}" class="btn btn-outline-info">Modifier</a>
+		</h1>
+		<p class="lead">Les details sur cet enregistrement.
+		</p>
+		<hr class="my-4">
+		<p class="lead">
+			<ul class="list-group">
+				<li class="list-group-item d-flex justify-content-between align-items-center active">
+					LAUREATS
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center">
+				<table class="table table-hover">
+
+				  <tbody>
+    					{% for value in auteurs %}
+    						<tr>
+      							<th scope="row">{{ value }}</th>
+    						</tr>
+    					{% endfor %}
+  				  </tbody>
+				</table>
+					
+				</li>
+			</ul>
+
+		</p>
+	</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="jumbotron">
+		<h1 class="display-3">
+			{% for value in entity %}
+				{{ value }}
+			{% endfor %}
+			<a href="/{{ table }}/update/{{ id }}" class="btn btn-outline-info">Modifier</a>
+		</h1>
+		<p class="lead">Les details sur cet enregistrement.
+		</p>
+		<hr class="my-4">
+		<p class="lead">
+			<ul class="list-group">
+				<li class="list-group-item d-flex justify-content-between align-items-center active">
+					PRIX
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center">
+
+<table class="table table-hover">
+  <thead>
+
+					{% for value in prix %}
+    						<tr><td scope="col"> {{ value }} </td></tr>					
+					{% endfor %}
+  </thead>
+</table> 
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center active">
+					OEUVRE
+					<span class="badge "></span>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-center ">
+<table class="table table-hover">
+  <thead>
+
+					{% for value in oeuvres %}
+    						<tr><td scope="col"> {{ value }} </td></tr>					
+					{% endfor %}
+  </thead>
+</table> 
+
+				</li>
+
+			</ul>
+
+		</p>
+	</div>
+
+
+{%endblock%} 
